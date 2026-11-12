@@ -4,15 +4,15 @@
 
 한글 문서, 문서, 스프레드시트, 발표자료를 한 앱에서 열고 편집하는 데스크톱 프로그램입니다.
 
-**현재 버전: Mac · Windows 0.8.52 (Windows 시험판)**
+**현재 버전: Mac · Windows 0.8.53 (Windows 시험판)**
 
 ## 내 컴퓨터에 맞는 설치 파일
 
 | 컴퓨터 | 다운로드 | 확인 상태 |
 | --- | --- | --- |
-| Mac — Apple Silicon · M1/M2/M3/M4 등 | [Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.52/HiBro-Office-0.8.52-mac-arm64.dmg) | 서명·공증 완료 |
-| Mac — Intel | [Intel Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.52/HiBro-Office-0.8.52-mac-x64.dmg) | 서명·공증 완료 |
-| Windows — 64비트 · 시험판 | [Windows용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.52/HiBro-Office-0.8.52-win-x64.exe) | Windows x64 테스트 환경에서 자동 업데이트 및 한글 저장·재열기 확인, 설치 파일 서명 전 |
+| Mac — Apple Silicon · M1/M2/M3/M4 등 | [Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.53/HiBro-Office-0.8.53-mac-arm64.dmg) | 서명·공증 완료 |
+| Mac — Intel | [Intel Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.53/HiBro-Office-0.8.53-mac-x64.dmg) | 서명·공증 완료 |
+| Windows — 64비트 · 시험판 | [Windows용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.53/HiBro-Office-0.8.53-win-x64.exe) | Windows x64 테스트 환경에서 자동 업데이트 및 Word·한글 수정·저장·재열기 확인, 설치 파일 서명 전 |
 
 설치 파일은 로그인 없이 받을 수 있으며, 설치 후 회원가입 없이 각자 컴퓨터에서 문서를 편집·저장할 수 있습니다. Codex나 별도의 Python 설치는 필요하지 않습니다.
 
@@ -26,14 +26,18 @@
 
 ## 자동 업데이트
 
-- 0.8.47 이상은 Mac과 Windows에서 0.8.52를 자동으로 확인하고 내려받습니다.
+- 0.8.47 이상은 Mac과 Windows에서 0.8.53를 자동으로 확인하고 내려받습니다.
 - 열린 문서의 저장 여부를 확인하고 정상 종료하면 다음 실행에 적용됩니다.
 - 바로 적용하려면 앱 메뉴의 ‘업데이트 확인…’을 선택하세요.
 - 저장 취소나 저장 실패 시 앱을 종료하거나 업데이트를 설치하지 않습니다.
 - 업데이트와 기본 편집에 로그인은 필요하지 않습니다.
 - **0.8.46 이하는 최신 설치판을 한 번 직접 설치해야 합니다.**
 
-Windows x64 테스트 환경에서 0.8.50 설치, 자동 업데이트 후 0.8.52 실행, 기존 문서 보존과 한글 저장·재열기를 확인했습니다. Apple Silicon과 Intel Mac 설치 파일은 Apple 공증을 받았습니다. Windows 설치 파일에는 실행 파일 서명이 없으며 일반 Windows PC에서의 검증은 남아 있습니다.
+Windows x64 테스트 환경에서 0.8.52 설치, 자동 업데이트 후 0.8.53 실행, 기존 문서 보존과 Word·한글 편집·저장·재열기를 확인했습니다. Apple Silicon과 Intel Mac 설치 파일은 Apple 공증을 받았습니다. Windows 설치 파일에는 실행 파일 서명이 없으며 일반 Windows PC에서의 검증은 남아 있습니다.
+
+## 0.8.53 변경 사항
+
+기존 목록 탭이 있는 Word 문서를 편집한 뒤 저장해도 탭 위치와 빈 문단을 보존합니다. 한글 표에서는 이미 선택한 글자 위에서 다시 드래그해도 새 범위를 선택할 수 있습니다.
 
 ## 0.8.52 변경 사항
 
