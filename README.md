@@ -4,15 +4,15 @@
 
 한글 문서, 문서, 스프레드시트, 발표자료를 한 앱에서 열고 편집하는 데스크톱 프로그램입니다.
 
-**현재 버전: Mac · Windows 0.8.55 (Windows 시험판)**
+**현재 버전: Mac · Windows 0.8.57 (Windows 시험판)**
 
 ## 내 컴퓨터에 맞는 설치 파일
 
 | 컴퓨터 | 다운로드 | 확인 상태 |
 | --- | --- | --- |
-| Mac — Apple Silicon · M1/M2/M3/M4 등 | [Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.55/HiBro-Office-0.8.55-mac-arm64.dmg) | 서명·공증 완료 |
-| Mac — Intel | [Intel Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.55/HiBro-Office-0.8.55-mac-x64.dmg) | 서명·공증 완료 |
-| Windows — 64비트 · 시험판 | [Windows용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.55/HiBro-Office-0.8.55-win-x64.exe) | Windows x64 테스트 환경에서 자동 업데이트 및 Word·한글 수정·저장·재열기 확인, 설치 파일 서명 전 |
+| Mac — Apple Silicon · M1/M2/M3/M4 등 | [Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.57/HiBro-Office-0.8.57-mac-arm64.dmg) | 서명·공증 완료 |
+| Mac — Intel | [Intel Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.57/HiBro-Office-0.8.57-mac-x64.dmg) | 서명·공증 완료 |
+| Windows — 64비트 · 시험판 | [Windows용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.57/HiBro-Office-0.8.57-win-x64.exe) | Windows x64 테스트 환경에서 XLSX 수정·저장·재열기와 PDF 출력 확인, 설치 파일 서명 전 |
 
 설치 파일은 로그인 없이 받을 수 있으며, 설치 후 회원가입 없이 각자 컴퓨터에서 문서를 편집·저장할 수 있습니다. Codex나 별도의 Python 설치는 필요하지 않습니다.
 
@@ -26,7 +26,7 @@
 
 ## 자동 업데이트
 
-- 0.8.47 이상은 Mac과 Windows에서 0.8.55를 자동으로 확인하고 내려받습니다.
+- 0.8.47 이상은 Mac과 Windows에서 최신 버전을 자동으로 확인하고 내려받습니다.
 - 열린 문서의 저장 여부를 확인하고 정상 종료하면 다음 실행에 적용됩니다.
 - 바로 적용하려면 앱 메뉴의 ‘업데이트 확인…’을 선택하세요.
 - 저장 취소나 저장 실패 시 앱을 종료하거나 업데이트를 설치하지 않습니다.
@@ -34,6 +34,12 @@
 - **0.8.46 이하는 최신 설치판을 한 번 직접 설치해야 합니다.**
 
 Windows x64 테스트 환경에서 0.8.54 설치, 자동 업데이트 후 0.8.55 실행, 기존 문서 보존과 Word·한글 편집·저장·재열기를 확인했습니다. Apple Silicon과 Intel Mac 설치 파일은 Apple 공증을 받았습니다. Windows 설치 파일에는 실행 파일 서명이 없으며 일반 Windows PC에서의 검증은 남아 있습니다.
+
+## 0.8.57 변경 사항
+
+엑셀의 인쇄 배율과 페이지 맞춤 방식을 구분해 보존합니다. 페이지 레이아웃에서 배율, 한 페이지, 너비·높이, 사용자 지정 페이지 수를 선택할 수 있습니다. 원본 여백·인쇄 영역과 수동 페이지 나눔을 유지하며, 긴 표는 여러 페이지로 출력할 수 있습니다. 이전 앱에서 인쇄 방식이 이미 바뀐 파일은 원하는 배율이나 한 페이지 맞춤을 직접 선택해 주세요.
+
+PDF·ODF 변환에는 컴퓨터에 설치된 LibreOffice가 필요합니다. 기본 문서 편집·저장에는 별도 Python이나 로그인이 필요하지 않습니다.
 
 ## 0.8.55 변경 사항
 
