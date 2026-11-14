@@ -1,0 +1,58 @@
+name: HiBro batch installed backend verification
+on:
+  workflow_dispatch:
+  push:
+    branches: [qa/batch-0.8.60]
+    paths: ['.github/workflows/batch-installed.yml', 'batch-qa/**', '!batch-qa/public-ready.json']
+permissions:
+  contents: write
+jobs:
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: windows-2022, arch: x64, suffix: win-x64.exe }
+          - { os: macos-15, arch: arm64, suffix: mac-arm64.dmg }
+          - { os: macos-15-intel, arch: x64, suffix: mac-x64.dmg }
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Download hash-verified draft installers
+        working-directory: batch-qa
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SUFFIX: ${{ matrix.suffix }}
+        run: |
+          set -eu
+          gh release download batch-0.8.60-qa -R "$GITHUB_REPOSITORY" -p "*-0.8.60-$SUFFIX" -p SHA256SUMS.txt
+          cp SHA256SUMS.txt office-SHA256SUMS.txt
+          cp SHA256SUMS.txt hangul-SHA256SUMS.txt
+          cp SHA256SUMS.txt slides-SHA256SUMS.txt
+          cp SHA256SUMS.txt write-SHA256SUMS.txt
+          cp SHA256SUMS.txt sheets-SHA256SUMS.txt
+      - name: Actual installer and installed Python physical roundtrip tests
+        working-directory: batch-qa
+        shell: bash
+        env:
+          QA_PHASE: installed
+          QA_ARCH: ${{ matrix.arch }}
+          PYTHONUTF8: '1'
+        run: node suite.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: installed-${{ matrix.os }}-${{ matrix.arch }}
+          path: |
+            batch-qa/cases/*.json
+            batch-qa/cases/*.log
+            batch-qa/cases/*/*.json
+            batch-qa/cases/*/*.log
+            batch-qa/cases/*/word-*.docx
+            batch-qa/cases/*/sheet-*.xlsx
+            batch-qa/cases/*/excel-functions-*.xlsx
+          if-no-files-found: ignore

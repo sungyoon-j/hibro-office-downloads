@@ -1,0 +1,57 @@
+name: HiBro batch public updater download verification
+on:
+  workflow_dispatch:
+  push:
+    branches: [qa/batch-0.8.60]
+    paths: ['batch-qa/public-ready.json']
+permissions:
+  contents: read
+jobs:
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: windows-2022, arch: x64, suffix: win-x64.exe }
+          - { os: macos-15, arch: arm64, suffix: mac-arm64.zip }
+          - { os: macos-15-intel, arch: x64, suffix: mac-x64.zip }
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Download hash-verified public predecessors
+        working-directory: batch-qa
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SUFFIX: ${{ matrix.suffix }}
+        run: |
+          set -eu
+          gh release download v0.8.59 -R sungyoon-j/hibro-office-downloads -p "HiBro-Office-0.8.59-$SUFFIX" -p SHA256SUMS.txt
+          mv SHA256SUMS.txt office-SHA256SUMS.txt
+          gh release download v0.8.58 -R sungyoon-j/hibro-hangul-downloads -p "HiBro-Hangul-0.8.58-$SUFFIX" -p SHA256SUMS.txt
+          mv SHA256SUMS.txt hangul-SHA256SUMS.txt
+          gh release download v0.8.59 -R sungyoon-j/hibro-write-downloads -p "HiBro-Write-0.8.59-$SUFFIX" -p SHA256SUMS.txt
+          mv SHA256SUMS.txt write-SHA256SUMS.txt
+          gh release download v0.8.59 -R sungyoon-j/hibro-sheets-downloads -p "HiBro-Sheets-0.8.59-$SUFFIX" -p SHA256SUMS.txt
+          mv SHA256SUMS.txt sheets-SHA256SUMS.txt
+          gh release download v0.8.58 -R sungyoon-j/hibro-slides-downloads -p "HiBro-Slides-0.8.58-$SUFFIX" -p SHA256SUMS.txt
+          mv SHA256SUMS.txt slides-SHA256SUMS.txt
+      - name: Real predecessor downloads its own public update
+        working-directory: batch-qa
+        shell: bash
+        env:
+          QA_PHASE: update
+          QA_ARCH: ${{ matrix.arch }}
+          PYTHONUTF8: '1'
+        run: node suite.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: update-${{ matrix.os }}-${{ matrix.arch }}
+          path: |
+            batch-qa/cases/*.json
+            batch-qa/cases/*.log
+          if-no-files-found: ignore

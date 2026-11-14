@@ -1,0 +1,90 @@
+[
+  {
+    "name": "HiBro Office",
+    "slug": "office",
+    "prefix": "HiBro-Office",
+    "kind": null,
+    "profile": "hibro-office",
+    "bundleId": "local.hibro.office",
+    "repository": "sungyoon-j/hibro-office-downloads",
+    "predecessorVersion": "0.8.59",
+    "authScheme": "hibroemployee",
+    "extensions": [
+      "docx",
+      "xlsx",
+      "hwp",
+      "hwpx",
+      "pptx",
+      "pdf"
+    ]
+  },
+  {
+    "name": "HiBro Hangul",
+    "slug": "hangul",
+    "prefix": "HiBro-Hangul",
+    "extensions": [
+      "hwp",
+      "hwpx"
+    ],
+    "kind": "hangul",
+    "profile": "hibro-hangul",
+    "authScheme": "hibrohangul",
+    "openScheme": "hibrohangul",
+    "repository": "sungyoon-j/hibro-hangul-downloads",
+    "bundleId": "local.hibro.standalone.hangul",
+    "predecessorVersion": "0.8.58"
+  },
+  {
+    "name": "HiBro Write",
+    "slug": "write",
+    "prefix": "HiBro-Write",
+    "extensions": [
+      "docx",
+      "doc",
+      "odt",
+      "txt"
+    ],
+    "kind": "document",
+    "profile": "hibro-write",
+    "authScheme": "hibrowrite",
+    "openScheme": "hibrowrite",
+    "repository": "sungyoon-j/hibro-write-downloads",
+    "bundleId": "local.hibro.standalone.write",
+    "predecessorVersion": "0.8.59"
+  },
+  {
+    "name": "HiBro Sheets",
+    "slug": "sheets",
+    "prefix": "HiBro-Sheets",
+    "extensions": [
+      "xlsx",
+      "xls",
+      "ods",
+      "csv"
+    ],
+    "kind": "sheet",
+    "profile": "hibro-sheets",
+    "authScheme": "hibrosheets",
+    "openScheme": "hibrosheets",
+    "repository": "sungyoon-j/hibro-sheets-downloads",
+    "bundleId": "local.hibro.standalone.sheets",
+    "predecessorVersion": "0.8.59"
+  },
+  {
+    "name": "HiBro Slides",
+    "slug": "slides",
+    "prefix": "HiBro-Slides",
+    "extensions": [
+      "pptx",
+      "ppt",
+      "odp"
+    ],
+    "kind": "slides",
+    "profile": "hibro-slides",
+    "authScheme": "hibroslides",
+    "openScheme": "hibroslides",
+    "repository": "sungyoon-j/hibro-slides-downloads",
+    "bundleId": "local.hibro.standalone.slides",
+    "predecessorVersion": "0.8.58"
+  }
+]
