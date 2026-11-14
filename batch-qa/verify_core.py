@@ -129,6 +129,7 @@ for name in ['test_document_review','test_document_compare','test_document_notes
 acceptance=unittest.TextTestRunner(stream=sys.stderr,verbosity=2).run(batch)
 assert acceptance.wasSuccessful(), 'Installed batch acceptance failed'
 print(json.dumps({'passed':True, 'execution':'installed native Python and shipped resources; no UI automation',
+                  'resourceHashesDigest':hashlib.sha256(json.dumps(manifest['files'],sort_keys=True).encode()).hexdigest(),
                   'resourceHashesMatched':len(manifest['files']), 'batchAcceptanceTests':acceptance.testsRun, 'batchAcceptancePassed':True, 'wordCycles':3, 'sheetCycles':3,
                   'actualExcelGoldenCases':len(golden['formulasAndValues']), 'actualExcelGoldenCycles':3,
                   'wordTextImageOrderAndImageBytes':True, 'formulaStringsAndCachedTypes':True,

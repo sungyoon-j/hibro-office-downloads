@@ -59,7 +59,8 @@ async function main(){
    assert(result.passed&&result.wordCycles===3&&result.sheetCycles===3);
    assert(result.batchAcceptancePassed&&result.actualExcelGoldenCases===18&&result.actualExcelGoldenCycles===3);
    assert.equal(digest(sentinel),before);
-   results.push({product:p.slug,version:target,execution:'actual installer and installed native backend; no UI automation',physicalEditSaveReopen:true,localDataPreserved:true,details:result});
+   const installer=p.prefix+'-'+target+'-'+(mac?'mac-'+arch+'.dmg':'win-x64.exe');
+   results.push({product:p.slug,version:target,installedArtifactSha256:digest(path.join(__dirname,installer)),execution:'actual installer and installed native backend; no UI automation',physicalEditSaveReopen:true,localDataPreserved:true,details:result});
   }else{
    // Launch the real unmodified predecessor. Its own updater fetches its actual public feed.
    const proc=spawn(executable(p),[],{env:{...process.env},stdio:'ignore'});proc.unref();
