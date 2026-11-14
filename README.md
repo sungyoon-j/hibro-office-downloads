@@ -4,15 +4,15 @@
 
 한글 문서, 문서, 스프레드시트, 발표자료를 한 앱에서 열고 편집하는 데스크톱 프로그램입니다.
 
-**현재 버전: Mac · Windows 0.8.58 (Windows 시험판)**
+**현재 버전: Mac · Windows 0.8.59 (Windows 시험판)**
 
 ## 내 컴퓨터에 맞는 설치 파일
 
 | 컴퓨터 | 다운로드 | 확인 상태 |
 | --- | --- | --- |
-| Mac — Apple Silicon · M1/M2/M3/M4 등 | [Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.58/HiBro-Office-0.8.58-mac-arm64.dmg) | 서명·공증 완료 |
-| Mac — Intel | [Intel Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.58/HiBro-Office-0.8.58-mac-x64.dmg) | 서명·공증 완료 |
-| Windows — 64비트 · 시험판 | [Windows용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.58/HiBro-Office-0.8.58-win-x64.exe) | Windows x64 테스트 환경에서 XLSX 수정·저장·재열기와 PDF 출력 확인, 설치 파일 서명 전 |
+| Mac — Apple Silicon · M1/M2/M3/M4 등 | [Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.59/HiBro-Office-0.8.59-mac-arm64.dmg) | 서명·공증 완료 |
+| Mac — Intel | [Intel Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.59/HiBro-Office-0.8.59-mac-x64.dmg) | 서명·공증 완료 |
+| Windows — 64비트 · 시험판 | [Windows용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.59/HiBro-Office-0.8.59-win-x64.exe) | Windows x64 테스트 환경에서 XLSX 수정·저장·재열기와 PDF 출력 확인, 설치 파일 서명 전 |
 
 설치 파일은 로그인 없이 받을 수 있으며, 설치 후 회원가입 없이 각자 컴퓨터에서 문서를 편집·저장할 수 있습니다. Codex나 별도의 Python 설치는 필요하지 않습니다.
 
@@ -34,6 +34,10 @@
 - **0.8.46 이하는 최신 설치판을 한 번 직접 설치해야 합니다.**
 
 Windows x64 테스트 환경에서 0.8.54 설치, 자동 업데이트 후 0.8.55 실행, 기존 문서 보존과 Word·한글 편집·저장·재열기를 확인했습니다. Apple Silicon과 Intel Mac 설치 파일은 Apple 공증을 받았습니다. Windows 설치 파일에는 실행 파일 서명이 없으며 일반 Windows PC에서의 검증은 남아 있습니다.
+
+## 0.8.59 변경 사항
+
+글자 사이에 들어간 그림의 순서가 DOCX 수정·저장 후에도 유지되도록 고쳤습니다. 엑셀의 음수·거듭제곱 계산 순서와 SUM·COUNT·COUNTA의 직접 입력값·참조 셀·빈 문자열·오류 집계를 수정했습니다. 실제 설치 앱의 Mac 화면 검사와 Mac·Windows 내장 처리 도구의 DOCX·XLSX 저장·재열기를 확인했습니다. 기존 사용자는 문서를 저장한 뒤 앱을 정상 종료하면 자동으로 내려받은 업데이트가 적용됩니다.
 
 ## 0.8.58 변경 사항
 
