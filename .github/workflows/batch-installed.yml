@@ -1,6 +1,11 @@
 name: HiBro batch installed backend verification
 on:
   workflow_dispatch:
+    inputs:
+      windows_only:
+        description: Run only the Windows acceptance job
+        type: boolean
+        default: false
   push:
     branches: [qa/employee-0.8.61]
     paths: ['.github/workflows/batch-installed.yml', 'batch-qa/**', '!batch-qa/public-ready.json']
@@ -11,10 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - { os: windows-2022, arch: x64, suffix: win-x64.exe }
-          - { os: macos-15, arch: arm64, suffix: mac-arm64.dmg }
-          - { os: macos-15-intel, arch: x64, suffix: mac-x64.dmg }
+        include: ${{ fromJSON((inputs.windows_only || contains(github.event.head_commit.message, '[windows-only]')) && '[{"os":"windows-2022","arch":"x64","suffix":"win-x64.exe"}]' || '[{"os":"windows-2022","arch":"x64","suffix":"win-x64.exe"},{"os":"macos-15","arch":"arm64","suffix":"mac-arm64.dmg"},{"os":"macos-15-intel","arch":"x64","suffix":"mac-x64.dmg"}]') }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 45
     steps:

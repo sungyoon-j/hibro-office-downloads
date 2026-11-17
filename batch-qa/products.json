@@ -8,7 +8,23 @@
     "bundleId": "local.hibro.office",
     "repository": "sungyoon-j/hibro-office-downloads",
     "predecessorVersion": "0.8.59",
-    "authScheme": "hibroemployee"
+    "authScheme": "hibroemployee",
+    "extensions": [
+      "pdf",
+      "hwp",
+      "hwpx",
+      "docx",
+      "xlsx",
+      "pptx",
+      "doc",
+      "xls",
+      "ppt",
+      "odt",
+      "ods",
+      "odp",
+      "csv",
+      "moa"
+    ]
   },
   {
     "name": "HiBro Hangul",
