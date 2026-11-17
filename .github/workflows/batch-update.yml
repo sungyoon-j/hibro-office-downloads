@@ -2,7 +2,7 @@ name: HiBro batch public updater download verification
 on:
   workflow_dispatch:
   push:
-    branches: [qa/batch-0.8.60]
+    branches: [qa/employee-0.8.61]
     paths: ['batch-qa/public-ready.json']
 permissions:
   contents: read

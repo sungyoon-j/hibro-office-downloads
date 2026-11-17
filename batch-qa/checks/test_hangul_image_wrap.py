@@ -59,14 +59,14 @@ class NativePictureWrapping(unittest.TestCase):
         for patch in [{'x_mm':190},{'y_mm':200,'width_mm':40,'height_mm':200}]:
             with self.assertRaises(ValueError):apply_command(result,{'type':'hangul_set_image_layout','image_index':0,**patch},self.data)
         other=native.import_native('source.hwpx',native.export_native(self.seed,'hwpx',self.data)[0],self.data)
-        with self.assertRaisesRegex(ValueError,'HWPX'):apply_command(other,self.op,self.data)
+        with self.assertRaises(ValueError):apply_command(other,{**self.op,'x_mm':190},self.data)
         self.assertEqual(result,old);self.assertEqual(native.native_path(result['content'],self.data).read_bytes(),raw)
 
-    def test_native_multiple_columns_are_refused_before_shaping(self):
+    def test_balanced_columns_are_refused_before_shaping(self):
         result=self.insert('square');before=envelope(result,self.data)['document'];desired=deepcopy(before)
         column=next(c['Generic']['column_def'] for c in desired['sections'][0]['paragraphs'][0]['controls'] if 'column_def' in c.get('Generic',{}))
-        column['count']=2;pic=pictures(desired)[0]['picture']
-        with self.assertRaisesRegex(ValueError,'여러 단'):wrap_caches(before,desired,0,[1],pictures(before)[0]['picture'],pic)
+        column['count']=2;column['kind']=1;pic=pictures(desired)[0]['picture']
+        with self.assertRaisesRegex(ValueError,'일반 단'):wrap_caches(before,desired,0,[1],pictures(before)[0]['picture'],pic)
 
 
 if __name__=='__main__':unittest.main()

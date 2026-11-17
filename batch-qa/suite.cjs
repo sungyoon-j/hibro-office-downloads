@@ -4,7 +4,7 @@ const crypto=require('node:crypto'),assert=require('node:assert/strict');
 const {execFileSync,spawn}=require('node:child_process');
 assert(process.env.GITHUB_ACTIONS==='true'&&process.env.RUNNER_TEMP);
 const products=require('./products.json'),mac=process.platform==='darwin';
-const phase=process.env.QA_PHASE||'installed',arch=process.env.QA_ARCH,target='0.8.60';
+const phase=process.env.QA_PHASE||'installed',arch=process.env.QA_ARCH,target='0.8.61';
 const cases=path.join(__dirname,'cases');fs.mkdirSync(cases,{recursive:true});
 const results=[];
 const run=(cmd,args,env=process.env)=>execFileSync(cmd,args,{encoding:'utf8',env,stdio:['ignore','pipe','pipe']}).trim();

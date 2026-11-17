@@ -56,7 +56,7 @@ expected = order(doc.paragraphs[0])
 previous = 'Middle'
 for cycle in range(1, 4):
     project = server.import_project('synthetic.docx', raw, persist=False)
-    assert project['content']['wordPropertiesVersion'] == 3
+    assert project['content']['wordPropertiesVersion'] == 5
     replacement = 'Edited' + str(cycle)
     project['content']['html'] = project['content']['html'].replace(previous, replacement)
     raw, _ = server.export_project(project, 'docx')
@@ -124,7 +124,7 @@ sys.path.insert(0,str(Path(__file__).parent/'checks'))
 loader=unittest.TestLoader();batch=unittest.TestSuite()
 for name in ['test_document_review','test_document_compare','test_document_notes',
              'test_document_shapes','test_document_section_bands','test_sheet_large',
-             'test_hangul_image_wrap','test_slide_richtext']:
+             'test_hangul_image_wrap','test_slide_richtext','test_word_form_roundtrip']:
     batch.addTests(loader.loadTestsFromName(name))
 acceptance=unittest.TextTestRunner(stream=sys.stderr,verbosity=2).run(batch)
 assert acceptance.wasSuccessful(), 'Installed batch acceptance failed'
