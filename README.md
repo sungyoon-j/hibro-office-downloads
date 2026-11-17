@@ -4,15 +4,15 @@
 
 한글 문서, 문서, 스프레드시트, 발표자료를 한 앱에서 열고 편집하는 데스크톱 프로그램입니다.
 
-**현재 버전: Mac · Windows 0.8.59 (Windows 시험판)**
+**현재 버전: Mac · Windows 0.8.61 (Windows 시험판)**
 
 ## 내 컴퓨터에 맞는 설치 파일
 
 | 컴퓨터 | 다운로드 | 확인 상태 |
 | --- | --- | --- |
-| Mac — Apple Silicon · M1/M2/M3/M4 등 | [Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.59/HiBro-Office-0.8.59-mac-arm64.dmg) | 서명·공증 완료 |
-| Mac — Intel | [Intel Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.59/HiBro-Office-0.8.59-mac-x64.dmg) | 서명·공증 완료 |
-| Windows — 64비트 · 시험판 | [Windows용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.59/HiBro-Office-0.8.59-win-x64.exe) | Windows x64 테스트 환경에서 XLSX 수정·저장·재열기와 PDF 출력 확인, 설치 파일 서명 전 |
+| Mac — Apple Silicon · M1/M2/M3/M4 등 | [Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.61/HiBro-Office-0.8.61-mac-arm64.dmg) | 서명·공증 완료 |
+| Mac — Intel | [Intel Mac용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.61/HiBro-Office-0.8.61-mac-x64.dmg) | 서명·공증 완료 |
+| Windows — 64비트 · 시험판 | [Windows용 설치 파일 받기](https://github.com/sungyoon-j/hibro-office-downloads/releases/download/v0.8.61/HiBro-Office-0.8.61-win-x64.exe) | Windows x64 환경에서 설치·내장 처리 도구의 저장·재열기 검사, 서명 전 |
 
 설치 파일은 로그인 없이 받을 수 있으며, 설치 후 회원가입 없이 각자 컴퓨터에서 문서를 편집·저장할 수 있습니다. Codex나 별도의 Python 설치는 필요하지 않습니다.
 
@@ -34,6 +34,12 @@
 - **0.8.46 이하는 최신 설치판을 한 번 직접 설치해야 합니다.**
 
 Windows x64 테스트 환경에서 0.8.54 설치, 자동 업데이트 후 0.8.55 실행, 기존 문서 보존과 Word·한글 편집·저장·재열기를 확인했습니다. Apple Silicon과 Intel Mac 설치 파일은 Apple 공증을 받았습니다. Windows 설치 파일에는 실행 파일 서명이 없으며 일반 Windows PC에서의 검증은 남아 있습니다.
+
+## 0.8.61 변경 사항
+
+Word 첫 페이지 별도 머리글·바닥글이 있는 양식의 열기, 빈칸 입력과 저장을 보완했습니다. 문단 끝 글꼴과 빈 줄 높이, 제목 전체 수정 시 원래 글꼴·크기를 보존합니다. 문서 편집 호환성과 큰 스프레드시트 선택 응답을 보완했습니다. 구역별 머리글·바닥글은 원본 보존 대상으로 직접 편집에는 제한이 있습니다. 복잡한 문서는 사본에서 먼저 확인해 주세요.
+
+Mac Apple Silicon·Intel과 Windows x64의 실제 설치 파일에서 495개 포함 파일을 대조하고, 39개 내장 처리 도구 검사와 DOCX·XLSX의 3회 저장·재열기를 확인했습니다. 사용자 Mac에서도 신청서 빈칸 입력·저장·앱 종료 후 실제 파일 재열기를 확인했습니다. Windows 설치 파일은 서명 전 시험판이며 일반 직원 PC의 화면·입력 검증은 별도입니다.
 
 ## 0.8.59 변경 사항
 
@@ -95,3 +101,4 @@ Apple Silicon Mac에서 설치, 완전 종료 후 재실행, 검사 문서 수�
 [전체 배포 이력](https://github.com/sungyoon-j/hibro-office-downloads/releases)
 
 [브라더공작소](https://www.bgong.co.kr/)
+
