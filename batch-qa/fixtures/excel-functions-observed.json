@@ -1,0 +1,98 @@
+{
+  "method": "Actual Microsoft Excel Mac opened same physical workbook via CUA; visible recalculated values, no saved cache used as oracle",
+  "fixture": "files/Function-Comparison.xlsx",
+  "screenshot": "excel-functions-reference.png",
+  "formulasAndValues": [
+    [
+      "AND",
+      "=AND(TRUE,1)",
+      true
+    ],
+    [
+      "OR",
+      "=OR(FALSE,0,2)",
+      true
+    ],
+    [
+      "NOT",
+      "=NOT(TRUE)",
+      false
+    ],
+    [
+      "MOD 음수",
+      "=MOD(-3,2)",
+      1
+    ],
+    [
+      "INT 음수",
+      "=INT(-2.3)",
+      -3
+    ],
+    [
+      "ROUNDUP 음수",
+      "=ROUNDUP(-3.14159,2)",
+      -3.15
+    ],
+    [
+      "ROUNDDOWN 음수",
+      "=ROUNDDOWN(-3.14159,2)",
+      -3.14
+    ],
+    [
+      "NETWORKDAYS",
+      "=NETWORKDAYS(DATE(2026,11,2),DATE(2026,11,6))",
+      5
+    ],
+    [
+      "근무일 역방향",
+      "=NETWORKDAYS(DATE(2026,11,6),DATE(2026,11,2))",
+      -5
+    ],
+    [
+      "중복 휴일",
+      "=NETWORKDAYS(DATE(2026,11,2),DATE(2026,11,6),H2:H3)",
+      4
+    ],
+    [
+      "올림 오차 방지",
+      "=ROUNDUP(1.1,1)",
+      1.1
+    ],
+    [
+      "0 방향 내림",
+      "=ROUNDDOWN(-314.5,-2)",
+      -300
+    ],
+    [
+      "TRUE 문자열",
+      "=AND(\"TRUE\")",
+      true
+    ],
+    [
+      "문자와 숫자 참조",
+      "=AND(F2:F4)",
+      false
+    ],
+    [
+      "문자만 참조",
+      "=AND(F2:F3)",
+      "#VALUE!"
+    ],
+    [
+      "MOD 0 나누기",
+      "=MOD(3,0)",
+      "#DIV/0!"
+    ],
+    [
+      "NOT 숫자문자",
+      "=NOT(\"1\")",
+      "#VALUE!"
+    ],
+    [
+      "AND 숫자문자",
+      "=AND(\"1\")",
+      "#VALUE!"
+    ]
+  ],
+  "editingAndSaveUnavailable": "Microsoft365 inactive; no Microsoft edit/save parity claim"
+}

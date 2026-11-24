@@ -1,0 +1,46 @@
+[
+  {
+    "name": "HiBro Office",
+    "slug": "office",
+    "prefix": "HiBro-Office",
+    "kind": null,
+    "profile": "hibro-office",
+    "bundleId": "local.hibro.office",
+    "repository": "sungyoon-j/hibro-office-downloads",
+    "predecessorVersion": "0.8.61",
+    "authScheme": "hibroemployee",
+    "extensions": [
+      "pdf",
+      "hwp",
+      "hwpx",
+      "docx",
+      "xlsx",
+      "pptx",
+      "doc",
+      "xls",
+      "ppt",
+      "odt",
+      "ods",
+      "odp",
+      "csv",
+      "moa"
+    ]
+  },
+  {
+    "name": "HiBro Slides",
+    "slug": "slides",
+    "prefix": "HiBro-Slides",
+    "extensions": [
+      "pptx",
+      "ppt",
+      "odp"
+    ],
+    "kind": "slides",
+    "profile": "hibro-slides",
+    "authScheme": "hibroslides",
+    "openScheme": "hibroslides",
+    "repository": "sungyoon-j/hibro-slides-downloads",
+    "bundleId": "local.hibro.standalone.slides",
+    "predecessorVersion": "0.8.61"
+  }
+]
