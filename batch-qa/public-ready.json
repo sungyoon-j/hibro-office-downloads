@@ -1,0 +1,10 @@
+{
+  "version": "0.8.62",
+  "products": [
+    "office",
+    "slides"
+  ],
+  "published": true,
+  "installedRun": 45347181526,
+  "scope": "PPTX groups, shapes, fields and large-file opening"
+}
